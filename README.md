@@ -10,3 +10,5 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 ## Index 📜
 
 ### 🔖 [Ansible_Using_Modules_with_Add_Hoc_Commands](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Modules_with_Add_Hoc_Commands)
+
+### 🔖 [Ansible_Using_Playbook_with_Task]()
