@@ -3,7 +3,7 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 <hr>
 
 <p align="center">
-    <img alt="Ansible" src="https://cdn.worldvectorlogo.com/logos/ansible.svg" height="300" width="800">
+    <img alt="Ansible" src="https://cdn.worldvectorlogo.com/logos/ansible.svg" height="300" width="300">
 </p>
 <hr>
 
@@ -11,4 +11,4 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 
 ### 🔖 [Ansible_Using_Modules_with_Add_Hoc_Commands](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Modules_with_Add_Hoc_Commands)
 
-### 🔖 [Ansible_Using_Playbook_with_Task]()
+### 🔖 [Ansible_Using_Playbook_with_Task](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Playbook_with_Task)
