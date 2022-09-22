@@ -1,0 +1,28 @@
+- name: Copy for Linux
+  hosts: webservers
+  tasks:
+    - name: copy file to the webservers
+      ansible.builtin.copy:
+        src: ~/playbook/testfile1
+        dest: ~/testfile1
+        mode: u+rw,g-wx,o-rwx
+
+- name: Copy ofr ubuntu
+  hosts: ubuntuservers
+  tasks:
+    - name: Copy your file to the ubuntuservers
+      ansible.builtin.copy:
+        src: ~/playbook/testfile1
+        dest: ~/testfile1
+        mode: u+rw,g-wx,o-rwx
+
+- name: Copy for node1
+  hosts: node1
+  tasks:
+    - name: Copy using inline content
+      ansible.builtin.copy:
+        content: "Bu dosya sonradan olustu\n"
+        dest: ~/testfile2
+
+    - name: Create a new text file
+      shell: "echo 'Hello World\n' > ~/testfile3"

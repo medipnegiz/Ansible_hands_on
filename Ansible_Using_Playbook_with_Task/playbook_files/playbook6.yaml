@@ -1,0 +1,39 @@
+- name: Play 4
+  hosts: ubuntuservers
+  tasks:
+    - name: installing apache
+      apt:
+        name: apache2
+        state: latest
+      become: yes
+    
+    - name: index.html
+      copy:
+        content: "<h1> Merhaba arkadaslar</h1>"
+        dest: /var/www/html/index.html
+      become: yes
+
+    - name: restart Apache2
+      service:
+        name: apache2
+        state: restarted
+        enabled: yes
+      become: yes
+
+- name: play 5
+  hosts: webservers
+  tasks:
+    - name: installing httpd and wget
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - httpd
+        - wget
+      become: yes
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+      become: yes

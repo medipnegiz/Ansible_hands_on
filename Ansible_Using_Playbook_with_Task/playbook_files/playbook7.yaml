@@ -1,0 +1,26 @@
+- name: play6
+  hosts: ubuntuservers
+  tasks:
+    - name: Uninstalling apache
+      apt:
+        name: apache2
+        state: absent
+        update_cache: yes
+      become: yes
+    - name: Remove unwanted Apache2 packages
+      apt:
+        autoremove: yes
+        purge: yes
+      become: yes
+  
+- name: play7
+  hosts: webservers
+  tasks:
+    - name: removing apache and wget
+      yum:
+        name: "{{ item }}"
+        state: absent
+      loop:
+        - httpd
+        - wget
+      become: yes
