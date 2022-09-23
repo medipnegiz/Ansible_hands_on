@@ -1,0 +1,121 @@
+- name: DB configuration
+  hosts: db_server
+  become: yes
+  tasks:
+    - name: install mariadb and PyMySQL
+      yum:
+        name:
+          - mariadb-server
+          - python3-PyMySQL
+        state: latest
+
+    - name: start and enabled mariadb
+      systemd:
+        name: mariadb
+        enabled: true
+        state: started
+
+    - name: copy the sql script
+      copy:
+        src: ~/db-load-script.sql
+        dest: ~/db-load-script.sql
+
+    - name: copy the .my.cnf file
+      copy:
+        src: ~/.my.cnf
+        dest: ~/
+
+    - name: Create password for the root user
+      mysql_user:
+        login_user: root
+        login_password: ''
+        name: root
+        password: "Clarus1234"
+
+
+
+    - name: Create db user with all database privileges
+      mysql_user:
+        name: edipnegiz
+        password: "edip22333"
+        login_user: root
+        login_password: "Clarus1234"
+        priv: '*.*:ALL,GRANT'
+        state: present
+        host: "{{ hostvars['web_server'].ansible_host }}"
+
+    - name: Create database schema
+      mysql_db:
+        name: ecomdb
+        login_user: root
+        login_password: "Clarus1234"
+        state: present
+
+    - name: check if the database has the table
+      shell: |
+        echo "USE ecomdb; show tables like 'products';" | mysql
+      register: resultoftable
+
+    - name: result
+      debug:
+        var: resultoftable
+
+    - name: Import database table
+      mysql_db:
+        name: ecomdb
+        state: import
+        target: ~/db-load-script.sql
+      when: resultoftable == ""
+
+    - name: restart mariadb
+      systemd:
+        name: mariadb
+        state: restarted
+
+- name: Web server configuration
+  hosts: web_server
+  become: yes
+  tasks:
+    - name: install latest version of Git, Apache, Php, Php-Mysqlnd
+      package:
+        name:
+          - git
+          - httpd
+          - php
+          - php-mysqlnd
+        state: latest
+
+    - name: start the server and enable it
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: clone the repo of the website
+      shell: |
+        if [ -z "$(ls -al /var/www/html | grep .git)" ]; then
+          git clone https://github.com/kodekloudhub/learning-app-ecommerce.git /var/www/html/
+          echo "ok"
+        else
+          echo "already cloned..."
+        fi
+      register: result2
+
+    - name: sonuc
+      debug:
+        var: result2
+
+    - name: Replace a default entry with our own
+      lineinfile:
+        path: /var/www/html/index.php
+        search_string: '172.20.1.101'
+        line: "$link = mysqli_connect('{{ hostvars['db_server'].ansible_host }}', 'edipnegiz', 'edip22333', 'ecomdb');"
+      when: not result2 == "already cloned..."
+
+    - selinux:
+        state: disabled
+
+    - name: Restart service httpd
+      service:
+        name: httpd
+        state: restarted
