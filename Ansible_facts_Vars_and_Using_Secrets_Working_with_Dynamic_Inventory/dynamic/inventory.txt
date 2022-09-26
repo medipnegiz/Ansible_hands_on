@@ -1,0 +1,8 @@
+[servers]
+node1 ansible_host=172.31.88.220 ansible_user=ec2-user
+
+[dbservers]
+node2 ansible_host=172.31.83.151 ansible_user=ec2-user
+
+[all:vars]
+ansible_ssh_private_key_file=~/NVirginia-key.pem

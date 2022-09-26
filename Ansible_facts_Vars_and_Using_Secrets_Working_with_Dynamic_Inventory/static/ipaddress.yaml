@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+  - name: Print IP address
+    ansible.builtin.debug:
+      msg: Bu {{ inventory_hostname }} IP adresi {{ ansible_all_ipv4_addresses }}

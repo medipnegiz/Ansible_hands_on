@@ -1,0 +1,11 @@
+- name: create user
+  hosts: all
+  become: yes
+  vars_files:
+    - secret1.yaml
+  tasks:
+    - name: creating user
+      user:
+        name: "{{ usern }}"
+        password: "{{ passhash | password_hash('sha512') }}"
+        state: present
