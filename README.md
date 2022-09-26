@@ -12,3 +12,5 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 ### 🔖 [Ansible_Using_Modules_with_Add_Hoc_Commands](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Modules_with_Add_Hoc_Commands)
 
 ### 🔖 [Ansible_Using_Playbook_with_Task](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Playbook_with_Task)
+
+### 🔖 [Ansible_Provisioning_Web_and_DB_Server_with_Dynamic_Website](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Provisioning_Web_and_DB_Server_with_Dynamic_Website)
