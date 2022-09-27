@@ -1,0 +1,26 @@
+plugin: aws_ec2
+regions:
+  - "us-east-1"
+keyed_groups:
+  - key: tags.Name
+    separator: ""
+    # prefix: edip
+  # - prefix: arch
+  #   key: architecture
+  # - prefix: tag
+  #   key: tags
+  # - prefix: region
+  #   key: placement.region
+  # - key: tags.Name
+  # - prefix: instance_type
+  #   key: instance_type
+filters:
+  instance-state-name : running
+compose:
+  ansible_host: public_ip_address
+  foo: private_ip_address
+  boo: instance_id
+  key: key_name
+hostnames:
+- tag:Name=web_server_1   # görünür ad atamak icin kullanilir
+- tag:Name=web_server_2

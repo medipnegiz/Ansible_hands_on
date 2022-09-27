@@ -1,0 +1,18 @@
+---
+# tasks file for /home/ec2-user/ediprole/roles/apache
+
+- name: installinfg apache
+  package:
+    name: httpd
+    state: latest
+
+- name: index.html
+  copy:
+    content: "<h1>naber be ya gencler</h1>"
+    dest: /var/www/html/index.html
+
+- name: restarted apache
+  service:
+    name: httpd
+    state: restarted
+    enabled: yes
