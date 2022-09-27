@@ -14,3 +14,5 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 ### 🔖 [Ansible_Using_Playbook_with_Task](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Playbook_with_Task)
 
 ### 🔖 [Ansible_Provisioning_Web_and_DB_Server_with_Dynamic_Website](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Provisioning_Web_and_DB_Server_with_Dynamic_Website)
+
+### 🔖 [Ansible_facts_Vars_and_Using_Secrets_Working_with_Dynamic_Inventory](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_facts_Vars_and_Using_Secrets_Working_with_Dynamic_Inventory)
