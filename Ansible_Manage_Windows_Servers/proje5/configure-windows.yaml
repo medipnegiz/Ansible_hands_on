@@ -1,0 +1,19 @@
+- name: windows server configuration
+  hosts: windows_servers
+  tasks:
+    - name: Central Standard Time configure
+      win_timezone:
+        timezone: Central Standard Time
+
+    - name: Change the hostname to webserver-2
+      win_hostname:
+        name: edip-hostname
+      register: restart
+
+    - name: DEBUG
+      debug:
+        var: restart
+
+    - name: Reboot
+      win_reboot:
+      when: restart.reboot_required

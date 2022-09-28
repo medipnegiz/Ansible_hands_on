@@ -1,0 +1,13 @@
+- name: DSC module example
+  hosts: windows_servers
+  gather_facts: False
+  tasks:
+    - name: Create file with some text
+      win_dsc:
+        resource_name: File
+        DestinationPath: C:\temp\file
+        Contents: |
+          Hello
+          Gencler
+        Ensure: Present
+        Type: File
