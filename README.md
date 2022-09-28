@@ -18,3 +18,5 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 ### 🔖 [Ansible_facts_Vars_and_Using_Secrets_Working_with_Dynamic_Inventory](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_facts_Vars_and_Using_Secrets_Working_with_Dynamic_Inventory)
 
 ### 🔖 [Ansible_Using_Roles_and_Ansible_Galaxy](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Roles_and_Ansible_Galaxy)
+
+### 🔖 [Ansible_Manage_Windows_Servers]()
