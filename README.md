@@ -13,9 +13,10 @@ Ansible Hands On Studies  [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 The purpose of this hands-on training is to give knowledge of basic Ansible skills.
 
 ### 🔖 [Ansible_Using_Playbook_with_Task](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Playbook_with_Task)
-Purpose of the this hands-on training is to give students the knowledge of basic Ansible skills.
+Purpose of the this hands-on training is to give the knowledge of basic Ansible skills.
 
 ### 🔖 [Ansible_Provisioning_Web_and_DB_Server_with_Dynamic_Website](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Provisioning_Web_and_DB_Server_with_Dynamic_Website)
+The purpose of this hands-on training is to give the knowledge of provisioning a web and database server with a dynamic website.
 
 ### 🔖 [Ansible_facts_Vars_and_Using_Secrets_Working_with_Dynamic_Inventory](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_facts_Vars_and_Using_Secrets_Working_with_Dynamic_Inventory)
 
