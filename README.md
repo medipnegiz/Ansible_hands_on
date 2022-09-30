@@ -22,5 +22,6 @@ The purpose of this hands-on training is to give the knowledge of provisioning a
 Purpose of the this hands-on training is to give the knowledge of ansible facts gathering, working with secret values and using dynamic inventory
 
 ### 🔖 [Ansible_Using_Roles_and_Ansible_Galaxy](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Using_Roles_and_Ansible_Galaxy)
+The purpose of this hands-on training is to give knowledge of basic Ansible skills.
 
 ### 🔖 [Ansible_Manage_Windows_Servers](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Manage_Windows_Servers)
