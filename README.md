@@ -25,3 +25,4 @@ Purpose of the this hands-on training is to give the knowledge of ansible facts 
 The purpose of this hands-on training is to give knowledge of basic Ansible skills.
 
 ### 🔖 [Ansible_Manage_Windows_Servers](https://github.com/medipnegiz/ansible_hands_on/tree/main/Ansible_Manage_Windows_Servers)
+The purpose of this hands-on training is to give the knowledge of how to manage Windows machines with Ansible.
